@@ -47,7 +47,7 @@ const CreateProfile = ({
             onClick={onCreateAccount}
             primary
           />
-          <FlatButton label={<Trans>Login</Trans>} onClick={onLogin} />
+          <FlatButton label={<Trans>zkLogin</Trans>} onClick={onLogin} />
         </ResponsiveLineStackLayout>
       </ColumnStackLayout>
     </div>

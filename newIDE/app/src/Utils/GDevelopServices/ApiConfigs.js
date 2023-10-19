@@ -35,69 +35,77 @@ export const GDevelopFirebaseConfig = {
   messagingSenderId: '44882707384',
 };
 
+// https://api-dev.gdevelop.io
+
 export const GDevelopBuildApi = {
   baseUrl: isDev
-    ? 'https://api-dev.gdevelop.io/build'
+    ? 'http://localhost:3000/build'
     : 'https://api.gdevelop.io/build',
 };
 
 export const GDevelopUsageApi = {
   baseUrl: isDev
-    ? 'https://api-dev.gdevelop.io/usage'
+    ? 'http://localhost:3000/usage'
     : 'https://api.gdevelop.io/usage',
 };
 
 export const GDevelopReleaseApi = {
   baseUrl: isDev
-    ? 'https://api-dev.gdevelop.io/release'
+    ? 'http://localhost:3000/release'
     : 'https://api.gdevelop.io/release',
 };
 
 export const GDevelopAssetApi = {
   baseUrl: isDev
-    ? 'https://api-dev.gdevelop.io/asset'
+    ? 'http://localhost:3000/asset'
     : 'https://api.gdevelop.io/asset',
 };
 
 export const GDevelopAnalyticsApi = {
   baseUrl: isDev
-    ? 'https://api-dev.gdevelop.io/analytics'
+    ? 'http://localhost:3000/analytics'
     : 'https://api.gdevelop.io/analytics',
 };
 
 export const GDevelopGameApi = {
   baseUrl: isDev
-    ? 'https://api-dev.gdevelop.io/game'
+    ? 'http://localhost:3000/game'
     : 'https://api.gdevelop.io/game',
 };
 
 export const GDevelopUserApi = {
   baseUrl: isDev
-    ? 'https://api-dev.gdevelop.io/user'
+    ? 'http://localhost:3000/user'
     : 'https://api.gdevelop.io/user',
+};
+
+export const zkLoginUrl = {
+  baseUrl: isDev
+    ? 'http://localhost:3000/user'
+    : 'https://zklogin.herokuapp.com/user',
 };
 
 export const GDevelopPlayApi = {
   baseUrl: isDev
-    ? 'https://api-dev.gdevelop.io/play'
+    ? 'http://localhost:3000/play'
     : 'https://api.gdevelop.io/play',
 };
 
 export const GDevelopShopApi = {
   baseUrl: isDev
-    ? 'https://api-dev.gdevelop.io/shop'
+    ? 'http://localhost:3000/shop'
     : 'https://api.gdevelop.io/shop',
 };
 
 export const GDevelopProjectApi = {
   baseUrl: isDev
-    ? 'https://api-dev.gdevelop.io/project'
+    ? 'http://localhost:3000/project'
     : 'https://api.gdevelop.io/project',
 };
 
 export const GDevelopGenerationApi = {
   baseUrl: isDev
-    ? 'https://api-dev.gdevelop.io/generation'
+    ? 'http://localhost:3000/generation'
     : 'https://api.gdevelop.io/generation',
 };
 
