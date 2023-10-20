@@ -3,6 +3,7 @@ import { CreateUserDto } from '@dtos/users.dto';
 import { RequestWithUser } from '@interfaces/auth.interface';
 import { User } from '@interfaces/users.interface';
 import AuthService from '@services/auth.service';
+import { CreateZkUserDto } from '@/dtos/zkUsers.dto';
 
 class AuthController {
   public authService = new AuthService();
@@ -37,6 +38,28 @@ class AuthController {
 
       res.setHeader('Set-Cookie', ['Authorization=; Max-age=0']);
       res.status(200).json({ data: logOutUserData, message: 'logout' });
+    } catch (error) {
+      next(error);
+    }
+  };
+
+  public zkLogin = async (req: Request, res: Response, next: NextFunction) => {
+    try {
+      // const { cookie, findUser } = await this.authService.zkLogin();
+      // res.setHeader('Set-Cookie', [cookie]);
+      // res.status(200).json({ data: findUser, message: 'zkLogin' });
+    } catch (error) {
+      next(error);
+    }
+  };
+
+  public zkSignup = async (req: Request, res: Response, next: NextFunction) => {
+    try {
+      const zkUserData: CreateZkUserDto = req.body;
+      const { loginUrl, nonce } = await this.authService.zkSignup(zkUserData);
+
+      // res.status(200).json({ data: { loginUrl, nonce }, message: 'zkSignup' });
+      res.redirect(loginUrl);
     } catch (error) {
       next(error);
     }
