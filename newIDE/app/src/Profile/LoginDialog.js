@@ -4,7 +4,7 @@ import { Trans } from '@lingui/macro';
 import React from 'react';
 import FlatButton from '../UI/FlatButton';
 import Dialog, { DialogPrimaryButton } from '../UI/Dialog';
-import { Column } from '../UI/Grid';
+import { Column, Line } from '../UI/Grid';
 import TextField from '../UI/TextField';
 import {
   type LoginForm,
@@ -18,6 +18,7 @@ import { ColumnStackLayout } from '../UI/Layout';
 import HelpButton from '../UI/HelpButton';
 import Link from '../UI/Link';
 import GDevelopGLogo from '../UI/CustomSvgIcons/GDevelopGLogo';
+import GoogleLogo from '../UI/CustomSvgIcons/GoogleLogo';
 import ForgotPasswordDialog from './ForgotPasswordDialog';
 import { useResponsiveWindowWidth } from '../UI/Reponsive/ResponsiveWindowMeasurer';
 import Form from '../UI/Form';
@@ -74,7 +75,7 @@ const LoginDialog = ({
     <LeftLoader isLoading={loginInProgress} key="login">
       <DialogPrimaryButton
         id="login-button"
-        label={<Trans>Login</Trans>}
+        label={<Trans>zkLogin</Trans>}
         primary
         onClick={doLogin}
         disabled={loginInProgress}
@@ -102,13 +103,26 @@ const LoginDialog = ({
       open
       flexColumnBody
     >
-      <ColumnStackLayout
+      <Line justifyContent="center">
+        <FlatButton
+          label={
+            <Trans>
+              <GoogleLogo fontSize="large" />
+              <Text size="title" align="center">
+                <Trans>Sign in with Google</Trans>
+              </Text>
+            </Trans>
+          }
+          onClick={() => {}}
+          fullWidth={true}
+        />
+      </Line>
+      {/* <ColumnStackLayout
         noMargin
         expand
         justifyContent="center"
         alignItems="center"
       >
-        <GDevelopGLogo fontSize="large" />
         <Text size="title" align="center">
           <Trans>Log in to your account</Trans>
         </Text>
@@ -178,7 +192,7 @@ const LoginDialog = ({
           onClose={() => setIsForgotPasswordDialogOpen(false)}
           onForgotPassword={onForgotPassword}
         />
-      )}
+      )} */}
     </Dialog>
   );
 };
